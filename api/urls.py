@@ -1,11 +1,11 @@
 from django.urls import path
-from .views.mango_views import Mangos, MangoDetail
+from .views.car_views import Cars, CarDetail
 from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 
 urlpatterns = [
   	# Restful routing
-    path('mangos/', Mangos.as_view(), name='mangos'),
-    path('mangos/<int:pk>/', MangoDetail.as_view(), name='mango_detail'),
+    path('cars', Cars.as_view(), name='cars'),
+    path('cars/<int:pk>', CarDetail.as_view(), name='car_detail'),
     path('sign-up/', SignUp.as_view(), name='sign-up'),
     path('sign-in/', SignIn.as_view(), name='sign-in'),
     path('sign-out/', SignOut.as_view(), name='sign-out'),
