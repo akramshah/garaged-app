@@ -8,7 +8,6 @@ class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
         fields = ('id','name', 'year', 'mileage', 'owner')
-        
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
