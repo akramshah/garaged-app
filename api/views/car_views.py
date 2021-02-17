@@ -56,7 +56,7 @@ class CarDetail(generics.RetrieveUpdateDestroyAPIView):
             raise PermissionDenied('Unauthorized, you do not own this car')
 
         request.data['car']['owner'] = request.user.id
-        data = CarSerializer(car, data=request.data['car'])
+        data = CarSerializer(car, data=request.data['car'], partial=True)
         if data.is_valid():
             data.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
